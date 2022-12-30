@@ -1,0 +1,63 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* CARACTERISTICAS DEL FONDO DE LA PAGINA PRINCIPAL */
+body{
+ }
+ 
+.pagina{
+   overflow: hidden;
+   width: 100%;
+   margin: auto;
+}
+.contenedor{
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+ 
+.animacion_fondo{  /*ANIMACION DE FONDO DE MANERA INFINITA*/
+    width: 100%;
+    height: 100vh;
+    background-image: url(https://png.pngtree.com/thumb_back/fw800/background/20190222/ourmid/pngtree-azure-universe-planet-cartoon-background-image_58913.jpg);
+    background-size: 100%;
+    animation: fanimado 10s infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+.niño_img{ /*MOVIMIENTO INFINITO CADA 2.5 SEGUNDOS DE MANERA INFINITA*/
+    animation: movimiento 2.5s linear infinite;   
+}
+
+.niño_img img{  /*TAMAÑO DEL NIÑO*/
+    width:500px;
+    height: auto;
+    display: block;
+    margin-left: 600px;
+}
+
+.boton h1{
+    margin-top: 80px;
+    color: #fff;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+font-size: 150px;
+float: left;
+text-align: center;
+}
+/* SECCION DE MOVIMIENTOS */
+/*MOVIMIENTO DE LAS BURBUJAS */
+
+/*MOVIMIENTO DEL NIÑO ANIMADO */
+@keyframes movimiento{
+    0%{ transform: translateY(0);}
+    50%{ transform: translateY(30px);}
+    100%{transform: translateY(0);}
+}
+@keyframes fanimado {
+    0%{ background-position: 0%,50%;}
+    50%{ background-position: 100%,50%;}
+    100%{background-position: 0%,50%;}
+}
