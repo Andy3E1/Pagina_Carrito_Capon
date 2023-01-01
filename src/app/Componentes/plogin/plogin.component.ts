@@ -12,7 +12,7 @@ export class PloginComponent implements OnInit {
 Nombre:any;
 contrasena: any;
 nom_comprobar='Andy';
-
+num_comprobar='123';
     ngOnInit(): void {
       this.informacion();
 }
@@ -22,11 +22,11 @@ pag_2(){this.router.navigate(['web2']);}
 pag_3(){this.router.navigate(['web3']);}
 //******FORMULARIO********* */
 informacion(){
-  localStorage.setItem('Nombre', this.Nombre);
-  localStorage.setItem('contraseña', this.contrasena);
+  localStorage.setItem('Nombre', this.Nombre.toString());
+  localStorage.setItem('contraseña', this.contrasena.toString());
 }
 comprobar(){
-  if (this.Nombre===this.nom_comprobar) {
+  if (this.Nombre===this.nom_comprobar && this.contrasena==this.num_comprobar) {
     this.nav();
   }else{
 this.err404();
