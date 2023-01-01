@@ -9,11 +9,7 @@ export class ComprasComponent implements OnInit {
 
   constructor(private router:Router) { }
   Nombre:any
-  Apellido: any;
-  correo:any
   contraseña:any
-  confirmarcontra:any
-  telefono:any
   ngOnInit(): void {
     this.recuperar_Formulario();
 
@@ -26,11 +22,7 @@ pag_3(){this.router.navigate(['web3']);}
 //********************************** */
 recuperar_Formulario(){
   this.Nombre= localStorage.getItem('Nombre')
-  this.Apellido= localStorage.getItem('Apellido')
-  this.correo= localStorage.getItem('correo')
   this.contraseña= localStorage.getItem('contraseña')
-  this.confirmarcontra= localStorage.getItem('confir' )
-  this.telefono= localStorage.getItem('telefono')
 
 }
 nav(){

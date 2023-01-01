@@ -10,14 +10,11 @@ export class PloginComponent implements OnInit {
   constructor(private router:Router) { 
   }
 Nombre:any;
-Apellido: any;
-correo:any;
 contrasena: any;
-confirmarcontra:any;
-telefono: any;
+nom_comprobar='Andy';
+
     ngOnInit(): void {
       this.informacion();
-      localStorage.clear();
 }
 navegar(){this.router.navigate(['web1']); }
 navegacion(){this.router.navigate(['volver']);}
@@ -26,13 +23,19 @@ pag_3(){this.router.navigate(['web3']);}
 //******FORMULARIO********* */
 informacion(){
   localStorage.setItem('Nombre', this.Nombre);
-  localStorage.setItem('Apellido', this.Apellido);
-  localStorage.setItem('correo', this.correo);
   localStorage.setItem('contraseña', this.contrasena);
-  localStorage.setItem('confir', this.confirmarcontra);
-  localStorage.setItem('telefono', this.telefono);
+}
+comprobar(){
+  if (this.Nombre===this.nom_comprobar) {
+    this.nav();
+  }else{
+this.err404();
+  }
 }
 nav(){
   this.router.navigate(['web1'])
+}
+err404(){
+  this.router.navigate(['web3'])
 }
 }

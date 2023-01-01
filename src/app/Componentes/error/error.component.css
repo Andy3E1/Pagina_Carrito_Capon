@@ -5,7 +5,10 @@
 }
 /* CARACTERISTICAS DEL FONDO DE LA PAGINA PRINCIPAL */
 body{
- }
+    
+    height: 753px;
+    margin: -8px;
+    }
  
 .pagina{
    overflow: hidden;
