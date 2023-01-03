@@ -22,46 +22,52 @@
     <header id="header">
         <button class="boton_regresar" (click)="nav()">Volver</button>
         <h1 (click)="nav()">GamerShop</h1> 
-        <img class="carrito" src="https://images.vexels.com/media/users/3/200097/isolated/preview/942820836246f08c2d6be20a45a84139-icono-de-carrito-de-compras-carrito-de-compras.png" alt="carrito">
-        <h1>{{Nombre}}</h1> 
+        <h4 id="numero">0</h4>
+        <img class="carrito" src="https://i.pinimg.com/originals/81/46/cb/8146cbe3eb0e43afee75317c3c473741.png" alt="carrito"
+        (click)="carro()">
+        <h1 id="nombre">{{Nombre}}</h1>
+        <img class="usuario" src="https://i.pinimg.com/originals/47/1a/1a/471a1ad342659289433e05a611d206f8.png">
     </header>
+
     <div id="contenedor" class="contenedor">
         <div>
             <img src="https://i.blogs.es/25be06/auricularesjugonesap/1366_2000.jpg" alt="producto 1">
             <div class="informacion">
-                <p>Producto 1</p>
-                <p class="precio">$150</p>
-                <button>Comprar</button>
+                <p>Green Shark Auriculares </p>
+                <p class="precio">$50</p>
+                <button >Comprar</button>
             </div>
         </div>
         <div>
             <img src="https://gamersecuador.store/wp-content/uploads/2021/08/H2116D_WEB_1-600x765.jpg" alt="producto 2">
             <div class="informacion">
-                <p>Producto 2</p>                   
-                <p class="precio">$240</p>
+                <p>Red Shark Auriculares</p>                   
+                <p class="precio">$50</p>
                 <button>Comprar</button>
             </div>
         </div>
         <div>
             <img src="https://cloudfront-us-east-1.images.arcpublishing.com/infobae/HFZYUJJHQ5HMBFNLNANOILY37Y.jpg" alt="producto 3">
             <div class="informacion">
-                <p>Producto 3</p>                   
+                <p>AirPods Pro</p>                   
                 <p class="precio">$130</p>
                 <button>Comprar</button>
+
             </div>
         </div>
         <div>
             <img src="https://i.ytimg.com/vi/8DDoFcsYEV0/maxresdefault.jpg" alt="producto 4">
             <div class="informacion">
-                <p>Producto 4</p>                   
+                <p>CyberpowerPC Gamer</p>                   
                 <p class="precio">$1300</p>
                 <button>Comprar</button>
+                
             </div>
         </div>
         <div>
             <img src="https://expertreviews.b-cdn.net/sites/expertreviews/files/2022/06/best_monitor_-_lead.jpg" alt="producto 5">
             <div class="informacion">
-                <p>Producto 5</p>                   
+                <p>Laptop HP Pavilion</p>                   
                 <p class="precio">$500</p>
                 <button>Comprar</button>
             </div>
@@ -69,88 +75,83 @@
         <div>
             <img src="https://dlcdnrog.asus.com/rog/media/1640742394134.webp" alt="producto 6">
             <div class="informacion">
-                <p>Producto 6</p>                   
-                <p class="precio">$620</p>
+                <p>Sager Laptop</p>                   
+                <p class="precio">$1650</p>
                 <button>Comprar</button>
+                
             </div>
         </div>
         <div>
             <img src="https://s1.eestatic.com/2021/09/20/imprescindibles/613449961_209051692_1024x576.jpg" alt="producto 7">
             <div class="informacion">
-                <p>Producto 7</p>                   
-                <p class="precio">$300</p>
+                <p>Snpurdiri</p>                   
+                <p class="precio">$50</p>
                 <button>Comprar</button>
+                
             </div>
         </div>
         <div>
             <img src="https://assets-prd.ignimgs.com/2022/07/10/wireless-gaming-mouse-2-1657437481494.jpg?width=1280" alt="producto 8">
             <div class="informacion">
-                <p>Producto 8</p>                   
-                <p class="precio">$400</p>
+                <p>EKSA Mouse</p>                   
+                <p class="precio">$20</p>
                 <button>Comprar</button>
+               
             </div>
         </div>
         <div>
             <img src="https://m.media-amazon.com/images/I/41VX0j8muCL._SL500_.jpg" alt="producto 9">
             <div class="informacion">
-                <p>Producto 9</p>                   
-                <p class="precio">$900</p>
+                <p>DESTEK V5 VR</p>                   
+                <p class="precio">$60</p>
                 <button>Comprar</button>
             </div>
         </div>
         <div>
-            <img src="https://www.notebookcheck.net/fileadmin/Notebooks/News/_nc3/ignacio_r_3yrJSb2fMT0_unsplash.jpeg" alt="producto 9">
+            <img src="https://www.notebookcheck.net/fileadmin/Notebooks/News/_nc3/ignacio_r_3yrJSb2fMT0_unsplash.jpeg" alt="producto 10">
             <div class="informacion">
-                <p>Producto 10</p>                   
+                <p>New Beats Studio Buds</p>                   
                 <p class="precio">$120</p>
                 <button>Comprar</button>
             </div>
         </div>
         <div>
-            <img src="https://point.com.ec/wp-content/uploads/2021/08/laptops-web_Mesa-de-trabajo-1.png" alt="producto 9">
+            <img src="https://point.com.ec/wp-content/uploads/2021/08/laptops-web_Mesa-de-trabajo-1.png" alt="producto 11">
             <div class="informacion">
-                <p>Producto 11</p>                   
+                <p>HP Nueva laptop 2022</p>                   
                 <p class="precio">$2210</p>
                 <button>Comprar</button>
             </div>
         </div>
         <div>
-            <img src="https://images.acer.com/is/image/acer/aspire5_a51556gst_fp-bl_wp_sv_1-1?$Product-Cards-XL$" alt="producto 9">
+            <img src="https://images.acer.com/is/image/acer/aspire5_a51556gst_fp-bl_wp_sv_1-1?$Product-Cards-XL$" alt="producto 12">
             <div class="informacion">
-                <p>Producto 12</p>                   
+                <p>Lenovo Laptop Ideapad</p>                   
                 <p class="precio">$1500</p>
                 <button>Comprar</button>
             </div>
         </div>
         <div>
-            <img src="https://www.blogdelfotografo.com/wp-content/uploads/2021/03/mega-guia-reflex-3.jpg" alt="producto 9">
+            <img src="https://www.blogdelfotografo.com/wp-content/uploads/2021/03/mega-guia-reflex-3.jpg" alt="producto 13">
             <div class="informacion">
-                <p>Producto 13</p>                   
+                <p>Panasonic LUMIX S5</p>                   
                 <p class="precio">$910</p>
                 <button>Comprar</button>
             </div>
         </div>
         <div>
-            <img src="https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2020/01/camara-vigilancia-tp-link.jpg?tf=3840x" alt="producto 9">
+            <img src="https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2020/01/camara-vigilancia-tp-link.jpg?tf=3840x" alt="producto 14">
             <div class="informacion">
-                <p>Producto 14</p>                   
+                <p>Blink Mini</p>                   
                 <p class="precio">$340</p>
                 <button>Comprar</button>
             </div>
         </div>
         <div>
-            <img src="https://educacion30.b-cdn.net/wp-content/uploads/2022/03/kit-para-construir-drones-978x652.jpg" alt="producto 9">
+            <img src="https://educacion30.b-cdn.net/wp-content/uploads/2022/03/kit-para-construir-drones-978x652.jpg" alt="producto 15">
             <div class="informacion">
-                <p>Producto 15</p>                   
+                <p>Drone con cámara 1080P</p>                   
                 <p class="precio">$1720</p>
-                <button>Comprar</button>
-            </div>
-        </div>
-        <div>
-            <img src="https://m.media-amazon.com/images/I/51uxXhwQ25L._SL500_.jpg" alt="producto 9">
-            <div class="informacion">
-                <p>Producto 16</p>                   
-                <p class="precio">$1190</p>
                 <button>Comprar</button>
             </div>
         </div>
