@@ -8,6 +8,8 @@ import { ComprasComponent } from './Componentes/compras/compras.component';
 import { CarritoComponent } from './Componentes/carrito/carrito.component';
 import { PloginComponent } from './Componentes/plogin/plogin.component';
 import { FormsModule } from '@angular/forms';
+import { PcomprasComponent } from './Componentes/pcompras/pcompras.component';
+
 
 @NgModule({
   declarations: [
@@ -15,7 +17,8 @@ import { FormsModule } from '@angular/forms';
     ErrorComponent,
     ComprasComponent,
     CarritoComponent,
-    PloginComponent
+    PloginComponent,
+    PcomprasComponent,
   ],
   imports: [
     BrowserModule,

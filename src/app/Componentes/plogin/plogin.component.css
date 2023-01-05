@@ -76,4 +76,7 @@ font-size: 16px;
 cursor: pointer;
 }
 
-
+.boton_registro:hover{ 
+    filter: invert(100%);
+    cursor: pointer;
+ }

@@ -3,76 +3,78 @@
     padding: 0;
     box-sizing: border-box;
 }
-/* CARACTERISTICAS DEL FONDO DE LA PAGINA PRINCIPAL */
 body{
     
-    height: 753px;
-    margin: -8px;
-    }
- 
+height: 753px;
+margin: -8px;
+}
 .pagina{
-   overflow: hidden;
-   width: 100%;
-   margin: auto;
-}
-.contenedor{
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
-}
- 
-.animacion_fondo{  /*ANIMACION DE FONDO DE MANERA INFINITA*/
     width: 100%;
-    height: 100vh;
-    background-image: url(https://png.pngtree.com/thumb_back/fw800/background/20190222/ourmid/pngtree-azure-universe-planet-cartoon-background-image_58913.jpg);
-    background-size: 100%;
-    animation: fanimado 10s infinite;
+    height: 100%;
+    background-color:#134074;
+}
+.img1{
+    width: 50%;
+    height: 110%;
+   margin-left: -25px;
+   margin-top: -30px;
+   float: left;
+   margin-right: 60px;
+
+}
+.seccion_formulario{
     position: relative;
-    overflow: hidden;
-}
-
-.niño_img{ /*MOVIMIENTO INFINITO CADA 2.5 SEGUNDOS DE MANERA INFINITA*/
-    animation: movimiento 2.5s linear infinite;   
-}
-
-.niño_img img{  /*TAMAÑO DEL NIÑO*/
-    width:500px;
-    height: auto;
-    display: block;
-    margin-left: 600px;
-}
-.error_txt{
-    margin-top: 80px;
-    color: #fff;
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-font-size: 100px;
-float: left;
-text-align: center;
-}
-
-.regreso {
-    width: 10%;
-    margin-left: -300px;
-    background-color: #1f53c5;
-    border: none;
-    padding: 12px;
+    top: 90px;
+    width: 1200px;
+    height: 570px;
+    background-color: #24303c;
+    padding: 30px;
+    margin: auto;
+    border-radius: 4px;
+    font-family: 'calibri';
     color: white;
-    margin: 1px, 0;
-    font-size: 16px;
+    box-shadow: 7px 13px 37px #000;
+    text-align: left;
+}
+.seccion_formulario h1{
+    font-size: 70px;
+    text-align: center;}
+
+.seccion_formulario h3{
+   margin-bottom: 50px;
+    text-align: center;
+}
+
+.ingreso {
+    width: 30%;
+    background: #24303c;
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 30px;
+    border: 1px solid #1f53c5;
+    font-family: 'calibri';
+    font-size: 18px;
+}
+.img_error{
+    margin-left: 170px;
+    width: 200px;
+    height: auto;
+}
+.seccion_formulario button {
+width: 20%;
+background-color: #1f53c5;
+border: none;
+padding: 12px;
+color: white;
+margin: 16px, 0;
+font-size: 16px;
+cursor: pointer;
+}
+.boton_registro{
+    margin-left: 160px;
+}
+.boton_registro:hover{ 
+    filter: invert(100%);
     cursor: pointer;
-    font-weight: 900;
-    }
-    .regreso:hover{ 
-        background:rgb(194, 200, 205, .4);
-          }
-/*MOVIMIENTO DEL NIÑO ANIMADO */
-@keyframes movimiento{
-    0%{ transform: translateY(0);}
-    50%{ transform: translateY(30px);}
-    100%{transform: translateY(0);}
-}
-@keyframes fanimado {
-    0%{ background-position: 0%,50%;}
-    50%{ background-position: 100%,50%;}
-    100%{background-position: 0%,50%;}
-}
+ }

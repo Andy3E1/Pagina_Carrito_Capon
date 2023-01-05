@@ -1,4 +1,4 @@
-* {
+ * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -141,3 +141,5 @@ background:rgb(194, 200, 205, .4);
     filter: invert(100%);
     cursor: pointer;
  }
+ 
+ 

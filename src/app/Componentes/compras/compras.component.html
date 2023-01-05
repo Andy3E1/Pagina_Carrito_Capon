@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,7 +27,7 @@
         <img class="carrito" src="https://i.pinimg.com/originals/81/46/cb/8146cbe3eb0e43afee75317c3c473741.png" alt="carrito"
         (click)="carro()">
         <h1 id="nombre">{{Nombre}}</h1>
-        <img class="usuario" src="https://i.pinimg.com/originals/47/1a/1a/471a1ad342659289433e05a611d206f8.png">
+        <img (click)=" limpiar()" class="usuario" src="https://i.pinimg.com/originals/47/1a/1a/471a1ad342659289433e05a611d206f8.png">
     </header>
 
     <div id="contenedor" class="contenedor">
@@ -35,7 +36,7 @@
             <div class="informacion">
                 <p>Green Shark Auriculares </p>
                 <p class="precio">$50</p>
-                <button >Comprar</button>
+                <button id="1" >Comprar</button>
             </div>
         </div>
         <div>
@@ -43,7 +44,7 @@
             <div class="informacion">
                 <p>Red Shark Auriculares</p>                   
                 <p class="precio">$50</p>
-                <button>Comprar</button>
+                <button id="1">Comprar</button>
             </div>
         </div>
         <div>
@@ -51,7 +52,7 @@
             <div class="informacion">
                 <p>AirPods Pro</p>                   
                 <p class="precio">$130</p>
-                <button>Comprar</button>
+                <button id="2">Comprar</button>
 
             </div>
         </div>
@@ -60,7 +61,7 @@
             <div class="informacion">
                 <p>CyberpowerPC Gamer</p>                   
                 <p class="precio">$1300</p>
-                <button>Comprar</button>
+                <button id="3">Comprar</button>
                 
             </div>
         </div>
@@ -69,7 +70,7 @@
             <div class="informacion">
                 <p>Laptop HP Pavilion</p>                   
                 <p class="precio">$500</p>
-                <button>Comprar</button>
+                <button id="4">Comprar</button>
             </div>
         </div>
         <div>
@@ -77,7 +78,7 @@
             <div class="informacion">
                 <p>Sager Laptop</p>                   
                 <p class="precio">$1650</p>
-                <button>Comprar</button>
+                <button id="5">Comprar</button>
                 
             </div>
         </div>
@@ -86,7 +87,7 @@
             <div class="informacion">
                 <p>Snpurdiri</p>                   
                 <p class="precio">$50</p>
-                <button>Comprar</button>
+                <button id="6">Comprar</button>
                 
             </div>
         </div>
@@ -95,7 +96,7 @@
             <div class="informacion">
                 <p>EKSA Mouse</p>                   
                 <p class="precio">$20</p>
-                <button>Comprar</button>
+                <button id="7">Comprar</button>
                
             </div>
         </div>
@@ -156,6 +157,7 @@
             </div>
         </div>
     </div>
+    <script src="compras.component.ts"></script> 
 </body>
 
 </html>

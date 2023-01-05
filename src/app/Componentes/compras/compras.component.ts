@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 export class ComprasComponent implements OnInit {
 
   constructor(private router:Router) { 
+    
    
   }
   Nombre:any
@@ -36,26 +37,10 @@ nav(){
 carro(){
   this.router.navigate(['web2'])
 }
-
-seleccionar(){
-  this.comprar=1;
-  if (this.comprar===0) {
-    this.select_comprar='Comprar';
-    
-  }
- else if (this.comprar===1){
-  this.select_comprar='Comprado';
- }
-}
-deseleccionado(){
-  this.comprar=0;
-  if (this.comprar===0) {
-    this.select_comprar='Comprar';
-    
-  }
- else if (this.comprar===1){
-  this.select_comprar='Comprado';
- }
+limpiar(){
+  localStorage.clear();
+  this.router.navigate([''])
 }
 
 }
+//ECOMMERCE PAGINA
