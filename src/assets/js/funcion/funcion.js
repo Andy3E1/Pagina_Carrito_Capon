@@ -1,35 +1,146 @@
+const { ContentChild } = require("@angular/core");
+const { withDebugTracing } = require("@angular/router");
+
+function funcion () {
+
+
 document.addEventListener('DOMContentLoaded', () => {
     // Variables
     const baseDeDatos = [
         {
             id: 1,
-            nombre: 'Patata',
+            nombre: 'BENGOO Ratón',
             precio: 1,
-            imagen: 'patata.jpg'
+           imagen:'https://m.media-amazon.com/images/I/41r2kRbnXoL._SL500_.jpg'
+    
+
         },
         {
             id: 2,
-            nombre: 'Cebolla',
+            nombre: 'GAMING MOUSE',
             precio: 1.2,
-            imagen: 'cebolla.jpg'
+            imagen: 'https://m.media-amazon.com/images/I/61lCLrCtuhL.jpg'
         },
         {
-            id: 3,
-            nombre: 'Calabacin',
+            id: 3, 
+            nombre: 'MOUSE M422 ',
             precio: 2.1,
-            imagen: 'calabacin.jpg'
+            imagen: 'https://s3.amazonaws.com/imagenes.toners.ec/wp-content/uploads/2020/03/16094215/m422.jpg'
         },
         {
             id: 4,
-            nombre: 'Fresas',
+            nombre: 'Teclado mecánico para juegos ONE-UP G300',
             precio: 0.6,
-            imagen: 'fresas.jpg'
+            imagen: 'https://m.media-amazon.com/images/W/WEBP_402378-T1/images/I/71cdho+dabL._AC_SL1500_.jpg'
+        },
+        {
+            id: 5,
+            nombre: 'Teclado mecánico para juegos ONE-UP G300 ',
+            precio: 1.2,
+            imagen: 'https://m.media-amazon.com/images/I/71TyGobdfQL._AC_SL1500_.jpg'
+        },
+        {
+            id: 6,
+            nombre: 'Teclado para juegos Razer Huntsman Mini 60%',
+            precio: 2.1,
+            imagen: 'http://havit.ec/wp-content/uploads/2017/08/CP-NACEBTECHNOLOGY-NA-635.jpg'
+        },
+        {
+            id: 7,
+            nombre: 'Dron E88',
+            precio: 0.6,
+            imagen: 'https://http2.mlstatic.com/D_NQ_NP_912211-MEC52723170912_122022-O.webp'
+        },
+        {
+            id: 8,
+            nombre: 'Drone 998',
+            precio: 0.6,
+            imagen: 'https://tecnicomfenix.com/wp-content/uploads/2022/04/DRONE-ESTUCHE5.jpg'
+        },
+        {
+            id: 9,
+            nombre: 'Dron de Loolinn ',
+            precio: 1.2,
+            imagen: 'https://7mejor.top/wp-content/uploads/2022/10/Loolinn.jpg'
+        },
+        {
+            id: 10,
+            nombre: 'Samsung Galaxy S22 ',
+            precio: 2.1,
+            imagen: 'https://mobilestore.ec/wp-content/uploads/2022/02/Samsung-Galaxy-S22-Verde-Mobile-Store-Ecuador.jpg'
+        },
+        {
+            id: 11,
+            nombre: 'Samsung Galaxy A33 5G',
+            precio: 0.6,
+            imagen: 'https://mobilestore.ec/wp-content/uploads/2022/05/Galaxy-A33-5G-Azul-Mobile-Store-Ecuador.jpg'
+        },
+        {
+            id: 12,
+            nombre: 'Xiaomi Redmi Note',
+            precio: 1.2,
+            imagen: 'https://mobilestore.ec/wp-content/uploads/2021/04/Redmi-Note-10-Pro-Azul-Mobile-Store-Ecuador.jpg'
+        },
+        {
+            id: 13,
+            nombre: 'Cámara VEMONT 1080P',
+            precio: 2.1,
+            imagen: 'https://m.media-amazon.com/images/I/618N0bCuAmL._AC_SL1000_.jpg'
+        },
+        {
+            id: 14,
+            nombre: 'Cámara de acción HD',
+            precio: 0.6,
+            imagen: 'https://m.media-amazon.com/images/I/61Cjxp4S1-L._AC_.jpg'
+        },
+        {
+            id: 15,
+            nombre: 'Cámara de acción 4K',
+            precio: 1.2,
+            imagen: 'https://m.media-amazon.com/images/I/71w+HJbH0sL._AC_SL1500_.jpg'
+        },
+        {
+            id: 16,
+            nombre: 'Cámara de SEGURIDAD WIFI',
+            precio: 2.1,
+            imagen: 'https://m.media-amazon.com/images/W/WEBP_402378-T1/images/I/51dT-Quc7wL._AC_SL1000_.jpg'
+        },
+        {
+            id: 17,
+            nombre: 'Cámara de seguridad para exteriores, WiFi',
+            precio: 0.6,
+            imagen: 'https://m.media-amazon.com/images/I/712rWrkArWL._AC_SL1500_.jpg'
+        },
+        {
+            id: 18,
+            nombre: 'Cámara con luz de seguridad',
+            precio: 0.6,
+            imagen: 'https://m.media-amazon.com/images/W/WEBP_402378-T1/images/I/61L6JAnpiSL._AC_SL1500_.jpg'
+        },
+        {
+            id: 19,
+            nombre: 'PC de escritorio Dell OptiPlex',
+            precio: 1.2,
+            imagen: 'https://m.media-amazon.com/images/I/91Fb+Pcxe-L._AC_SL1500_.jpg'
+        },
+        {
+            id: 20,
+            nombre: 'PC Continuum Micro',
+            precio: 2.1,
+            imagen: 'https://m.media-amazon.com/images/W/WEBP_402378-T1/images/I/81DsscehkVL._AC_SL1493_.jpg'
+        },
+        {
+            id: 21,
+            nombre: 'PC Case Gamer, Mid Tower, 2',
+            precio: 0.6,
+            imagen: 'https://tecnogame.ec/wp-content/uploads/2023/01/Gamemax-Elysium.jpg.webp'
         }
+
 
     ];
 
     let carrito = [];
-    const divisa = '€';
+    const divisa = '$';
     const DOMitems = document.querySelector('#items');
     const DOMcarrito = document.querySelector('#carrito');
     const DOMtotal = document.querySelector('#total');
@@ -50,7 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
             miNodoCardBody.classList.add('card-body');
             // Titulo
             const miNodoTitle = document.createElement('h5');
-            miNodoTitle.classList.add('card-title');
+            miNodoTitle.classList.add('card-title' );
             miNodoTitle.textContent = info.nombre;
             // Imagen
             const miNodoImagen = document.createElement('img');
@@ -80,7 +191,7 @@ document.addEventListener('DOMContentLoaded', () => {
     * Evento para añadir un producto al carrito de la compra
     */
     function anyadirProductoAlCarrito(evento) {
-        // Anyadimos el Nodo a nuestro carrito
+        // Añadimos el Nodo a nuestro carrito
         carrito.push(evento.target.getAttribute('marcador'))
         // Actualizamos el carrito 
         renderizarCarrito();
@@ -109,8 +220,9 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 0);
             // Creamos el nodo del item del carrito
             const miNodo = document.createElement('li');
+
             miNodo.classList.add('list-group-item', 'text-right', 'mx-2');
-            miNodo.textContent = `${numeroUnidadesItem} x ${miItem[0].nombre} - ${miItem[0].precio}${divisa}`;
+            miNodo.textContent = `${numeroUnidadesItem} x ${miItem[0].nombre} - ${miItem[0].precio}${divisa} -${miItem[0].imagen} `;
             // Boton de borrar
             const miBoton = document.createElement('button');
             miBoton.classList.add('btn', 'btn-danger', 'mx-5');
@@ -171,4 +283,4 @@ document.addEventListener('DOMContentLoaded', () => {
     // Inicio
     renderizarProductos();
     renderizarCarrito();
-  });
+  })};

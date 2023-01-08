@@ -8,7 +8,7 @@ import { PloginComponent } from './Componentes/plogin/plogin.component';
 
 const routes: Routes = [
   {path:'', component: PloginComponent },
-  {path:'web1', component: ComprasComponent},
+  {path:'web1', component: PcomprasComponent},
   {path:'volver', component: PloginComponent },
   {path:'web2', component: CarritoComponent},
   {path:'web3', component: ErrorComponent },];
