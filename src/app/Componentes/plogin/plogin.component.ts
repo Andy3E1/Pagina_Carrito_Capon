@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 export class PloginComponent implements OnInit {
 
   constructor(private router:Router) { 
+
   }
 Nombre:any;
 contrasena: any;

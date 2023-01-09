@@ -20,24 +20,19 @@
 <body>
     <header id="header">
         <h1 (click)="nav()" class="titulo">GamerShop</h1> 
-        <h4 id="numero">0</h4>
-        <img class="carrito" src="https://i.pinimg.com/originals/81/46/cb/8146cbe3eb0e43afee75317c3c473741.png" alt="carrito"
-        (click)="carro()">
         <h1 id="nombre">{{Nombre}}</h1>
         <img (click)=" limpiar()" class="usuario" src="https://i.pinimg.com/originals/47/1a/1a/471a1ad342659289433e05a611d206f8.png">
     </header>
 
     <div class="container">
         <div class="row">
-            <!-- Elementos generados a partir del JSON -->
             <main id="items" class="col-sm-8 row" ></main>
-            <!-- Carrito -->
             <aside class="col-sm-4">
-                <h2>Carrito</h2>
-                <!-- Elementos del carrito -->
+                <h2  onclick="location.reload()">Carrito 🛒</h2>
+       
                 <ul id="carrito" class="list-group" ></ul>
                 <hr>
-                <!-- Precio total -->
+           
                 <p class="text-right">Total: <span id="total"></span>&dollar;</p>
                 <button id="boton-vaciar" class="btn btn-danger">Vaciar</button>
             </aside>

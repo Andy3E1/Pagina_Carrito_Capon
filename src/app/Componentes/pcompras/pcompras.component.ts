@@ -1,15 +1,15 @@
 import { Component, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
-import { delay } from 'rxjs';
 import { CargarScriptsService } from "./../../cargar-scripts.service"
-declare function funcion():void; 
+declare function funcion ():void; 
 @Component({
   selector: 'app-pcompras',
   templateUrl: './pcompras.component.html',
   styleUrls: ['./pcompras.component.css']
 })
 export class PcomprasComponent implements OnInit{
-  constructor(private router:Router){      
+  constructor(private router:Router){ 
+    funcion();
   }
   Nombre:any
   contraseña:any
@@ -18,8 +18,10 @@ export class PcomprasComponent implements OnInit{
   comprar=0;
 ngOnInit():void{
   console.log("Ejecuta");
+
+
     this.recuperar_Formulario();
-  funcion();
+    funcion();
 }
 recuperar_Formulario(){
   this.Nombre= localStorage.getItem('Nombre')
@@ -34,4 +36,6 @@ limpiar(){
   localStorage.clear();
   this.router.navigate([''])
 }
+
+
 }

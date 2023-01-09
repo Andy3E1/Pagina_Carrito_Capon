@@ -36,6 +36,10 @@ img {
    object-fit: cover;
    border-radius: 20px 20px 0px 0px;
 }
+#boton-vaciar{
+   margin-left:0px;
+}
+
 header{
    display: flex;
    align-items: center;
@@ -56,11 +60,8 @@ header{
 .scroll h1{
    color: #141C29;
 }
-.carrito{
-   width: 75px;
-   height: auto;
-   border-radius: 4px;
-  
+.col-sm-4{
+   text-align: center;
 }
 .usuario{
    width: 45px;
