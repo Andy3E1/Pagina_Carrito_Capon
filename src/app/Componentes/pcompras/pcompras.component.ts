@@ -36,6 +36,8 @@ limpiar(){
   localStorage.clear();
   this.router.navigate([''])
 }
-
+carrito(){
+  this.router.navigate(['web2'])
+}
 
 }

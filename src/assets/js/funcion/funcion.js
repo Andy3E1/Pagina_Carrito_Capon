@@ -1,7 +1,12 @@
-function funcion() {
-document.addEventListener('DOMContentLoaded', () => {
+function funcion() {//METODO FUNCION
+document.addEventListener('DOMContentLoaded', () => {//El método addEventlistener, 
+    //es un escuchador que indica al navegador que este atento a la interacción del usuario
+    //************************************ */
     // Variables
-    const baseDeDatos = [
+        let carrito = [];//permite declarar variables limitando su alcance 
+    const baseDeDatos = [//Se crea la variable base de datos, donde se almacena las caracteristicas de productos
+/*La palabra const especifica que el valor de una variable 
+ es constante e indica al compilador que evite que el programador lo modifique.*/
         {
             id: 1,
             nombre: 'BENGOO Ratón',
@@ -134,54 +139,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     ];
 
-    let carrito = [];
-    const divisa = '$';
-    const DOMitems = document.querySelector('#items');
-    const DOMcarrito = document.querySelector('#carrito');
-    const DOMtotal = document.querySelector('#total');
-    const DOMbotonVaciar = document.querySelector('#boton-vaciar');
+    //al bloque, declaración, o expresión donde se está usando
+    const dolar = '$';//Simbolo de Moneda que aparece al lado de los productos
+    const El_items = document.querySelector('#items');//Retorna el primer elemento que cumpla con el criterio dado.
+     //Puede ser invocada sobre el document o sobre algún elemento.
+    const El_carrito = document.querySelector('#carrito');
+    const El_total = document.querySelector('#total');
+    const El_boton_Vaciar = document.querySelector('#boton-vaciar');
 
-    // Funciones
-
-
-    function renderizarProductos() {
-        baseDeDatos.forEach((info) => {
-            // Estructura
-            const miNodo = document.createElement('div');
-            miNodo.classList.add('card', 'col-sm-4');
-            // Body
-            const miNodoCardBody = document.createElement('div');
-            miNodoCardBody.classList.add('card-body');
-            // Titulo
-            const miNodoTitle = document.createElement('h5');
-            miNodoTitle.classList.add('card-title' );
-            miNodoTitle.textContent = info.nombre;
-            // Imagen
-            const miNodoImagen = document.createElement('img');
-            miNodoImagen.classList.add('img-fluid');
-            miNodoImagen.setAttribute('src', info.imagen);
-            // Precio
-            const miNodoPrecio = document.createElement('p');
-            miNodoPrecio.classList.add('card-text');
-            miNodoPrecio.textContent = `${info.precio}${divisa}`;
-            // Boton 
-            const miNodoBoton = document.createElement('button');
-            miNodoBoton.classList.add('btn', 'btn-primary');
-            miNodoBoton.textContent = '+';
-            miNodoBoton.setAttribute('marcador', info.id);
-            miNodoBoton.addEventListener('click', anyadirProductoAlCarrito);
-            // Insertamos
-            miNodoCardBody.appendChild(miNodoImagen);
-            miNodoCardBody.appendChild(miNodoTitle);
-            miNodoCardBody.appendChild(miNodoPrecio);
-            miNodoCardBody.appendChild(miNodoBoton);
-            miNodo.appendChild(miNodoCardBody);
-            DOMitems.appendChild(miNodo);
-        });
-    }
-
-
-    function anyadirProductoAlCarrito(evento) {
+    function anyadirProductoAlCarrito(evento) {//Metodo 
         // Añadimos el Nodo a nuestro carrito
         carrito.push(evento.target.getAttribute('marcador'))
         // Actualizamos el carrito 
@@ -192,11 +158,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function renderizarCarrito() {
         // Vaciamos todo el html
-        DOMcarrito.textContent = '';
+        El_carrito.textContent = '';
         // Quitamos los duplicados
         const carritoSinDuplicados = [...new Set(carrito)];
         // Generamos los Nodos a partir de carrito
-        carritoSinDuplicados.forEach((item) => {
+         carritoSinDuplicados.forEach((item) => {
             // Obtenemos el item que necesitamos de la variable base de datos
             const miItem = baseDeDatos.filter((itemBaseDatos) => {
                 // ¿Coincide las id? Solo puede existir un caso
@@ -210,25 +176,62 @@ document.addEventListener('DOMContentLoaded', () => {
             // Creamos el nodo del item del carrito
             const miNodo = document.createElement('li');
             miNodo.classList.add('list-group-item', 'text-right', 'mx-2');
-            miNodo.textContent = `${numeroUnidadesItem} x ${miItem[0].nombre} - ${miItem[0].precio}${divisa}  `;
+            miNodo.textContent = `${numeroUnidadesItem} x ${miItem[0].nombre} - ${miItem[0].precio}${dolar}  `;
 
             // Boton de borrar
             const miBoton = document.createElement('button');
             miBoton.classList.add('btn', 'btn-danger', 'mx-5');
-            miBoton.textContent = '🗑️';
+            miBoton.textContent = 'Eliminar ❌';
             miBoton.style.marginLeft = '1rem';
             miBoton.dataset.item = item;
-            miBoton.addEventListener('click', borrarItemCarrito);
+            miBoton.addEventListener('click', borrarItemsdelCarrito);
             // Mezclamos nodos
             miNodo.appendChild(miBoton);
-            DOMcarrito.appendChild(miNodo);
+            El_carrito.appendChild(miNodo);
         });
        // Renderizamos el precio total en el HTML
-       DOMtotal.textContent = calcularTotal();
+       El_total.textContent = calcularTotal();
     }
+ // Funciones
+ function renderizarProductos() {
+    baseDeDatos.forEach((info) => {//El for each es un bucle que permite recorrer los elementos de id,nombre, precio,imagen
+        // Estructura
+        const renderizar = document.createElement('div');// Este comando le permite agregar dinámicamente nuevos elementos HTML al DOM usando JavaScript.
+        renderizar.classList.add('card', 'col-sm-4');
+        //Usar classList es una forma práctica de acceder a la lista de clases de 
+        //un elemento como una cadena de texto delimitada por espacios a través de element.
+        // Body
+        const renderizarCardBody = document.createElement('div');
+        renderizarCardBody.classList.add('card-body');
+        // Titulo
+        const mirenderizarTitle = document.createElement('h5');
+        mirenderizarTitle.classList.add('card-title' );
+        mirenderizarTitle.textContent = info.nombre;
+        // Imagen
+        const mirenderizarImagen = document.createElement('img');
+        mirenderizarImagen.classList.add('img-fluid');
+        mirenderizarImagen.setAttribute('src', info.imagen);
+        // Precio
+        const mirenderizarPrecio = document.createElement('p');
+        mirenderizarPrecio.classList.add('card-text');
+        mirenderizarPrecio.textContent = `${info.precio}${dolar}`;
+        // Boton 
+        const mirenderizarBoton = document.createElement('button');
+        mirenderizarBoton.classList.add('btn', 'btn-primary');
+        mirenderizarBoton.textContent = 'Añadir ✔️';
+        mirenderizarBoton.setAttribute('marcador', info.id);
+        mirenderizarBoton.addEventListener('click', anyadirProductoAlCarrito);
+        // Insertamos
+        renderizarCardBody.appendChild(mirenderizarImagen);
+        renderizarCardBody.appendChild(mirenderizarTitle);
+        renderizarCardBody.appendChild(mirenderizarPrecio);
+        renderizarCardBody.appendChild(mirenderizarBoton);
+        renderizar.appendChild(renderizarCardBody);
+        El_items.appendChild(renderizar);
+    });
+}
 
-
-    function borrarItemCarrito(evento) {
+    function borrarItemsdelCarrito(evento) {
         // Obtenemos el producto ID que hay en el boton pulsado
         const id = evento.target.dataset.item;
         // Borramos todos los productos
@@ -260,9 +263,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Eventos
-    DOMbotonVaciar.addEventListener('click', vaciarCarrito);
+    El_boton_Vaciar.addEventListener('click', vaciarCarrito);
 
     // Inicio
     renderizarProductos();
     renderizarCarrito();
   })};
+  /*Nodo es cada elemento que forma parte de la red de
+información y que puede corresponder bien con las definiciones
+clásicas de un documento escrito: capítulos, secciones, párrafos, etc; */

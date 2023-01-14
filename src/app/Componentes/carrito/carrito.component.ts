@@ -16,6 +16,10 @@ navegar(){this.router.navigate(['web1']); }
 navegacion(){this.router.navigate(['volver']);}
 pag_2(){this.router.navigate(['web2']);}
 pag_3(){this.router.navigate(['web3']);}
+logout(){
+  this.router.navigate([''])
 }
+}
+
 
 
